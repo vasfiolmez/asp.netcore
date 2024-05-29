@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\basics.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\img\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\img\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\img\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\img\\4.jpg",
+      "PackagePath": "staticwebassets\\img\\4.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\js\\site.js",

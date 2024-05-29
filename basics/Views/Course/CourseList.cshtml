@@ -1,25 +1,8 @@
 @model List<Course>
 
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>List</title>
-    </head>
-
-    <body>
-
-        <h1>Course List Page</h1>
-        @foreach(var item in Model)
-        {
-        <div id="kurs_@item.Id">
-            <h2>@item.Title</h2>
-            <h3>@item.Description</h3>
-        </div>
-        }
-
-    </body>
-
-    </html>
+    <h1>Course List Page</h1>
+    <br>
+    @foreach(var item in Model)
+    {
+    @await Html.PartialAsync("_Course",item)
+    }
