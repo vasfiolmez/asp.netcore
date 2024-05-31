@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "basics", "basics\basics.csproj", "{63994588-8F3A-4591-96FA-23085FF4861B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingApp", "MeetingApp\MeetingApp.csproj", "{2BD5E122-E6A3-4E40-8CAF-33F99653A5A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63994588-8F3A-4591-96FA-23085FF4861B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63994588-8F3A-4591-96FA-23085FF4861B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63994588-8F3A-4591-96FA-23085FF4861B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63994588-8F3A-4591-96FA-23085FF4861B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD5E122-E6A3-4E40-8CAF-33F99653A5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD5E122-E6A3-4E40-8CAF-33F99653A5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD5E122-E6A3-4E40-8CAF-33F99653A5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD5E122-E6A3-4E40-8CAF-33F99653A5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A569A3E3-EFA1-49A8-9AF2-37BFF4057F56}
+	EndGlobalSection
+EndGlobal
