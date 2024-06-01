@@ -26,3 +26,5 @@ C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\MeetingApp.genruntim
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\ref\MeetingApp.dll
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAssemblyInfo.cache
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAssemblyInfo.cs
+C:\Users\hp\Desktop\asp.netcore\MeetingApp\bin\Debug\net8.0\libman.json
+C:\Users\hp\Desktop\asp.netcore\MeetingApp\bin\Debug\net8.0\MeetingApp.staticwebassets.runtime.json
