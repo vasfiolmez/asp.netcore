@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Forms_Application.props" />
+</Project>
