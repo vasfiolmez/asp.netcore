@@ -11,13 +11,21 @@ namespace Forms_Application.Models
     {
         [Display(Name = "Ürün Id")]
         public int ProductId { get; set; }
+
+
+        [Required]
         [Display(Name = "Ürün Adı")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
+
+        [Required]
+        [Range(0, 100000)]
         [Display(Name = "Ürün Fiyatı")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
+
         [Display(Name = "Ürün Resmi")]
-        public string Image { get; set; } = string.Empty;
+        public string? Image { get; set; }
         public bool İsActive { get; set; }
-        public int CategoryId { get; set; }
+        [Required]
+        public int? CategoryId { get; set; }
     }
 }
