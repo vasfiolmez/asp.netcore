@@ -12,7 +12,6 @@ namespace Forms_Application.Models
         [Display(Name = "Ürün Id")]
         public int ProductId { get; set; }
 
-
         [Required]
         [Display(Name = "Ürün Adı")]
         public string? Name { get; set; }

@@ -78,4 +78,32 @@ public class HomeController : Controller
         ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
         return View(model);
     }
+
+    public IActionResult Edit(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+        var entity = Repository.Products.FirstOrDefault(p => p.ProductId == id);
+        if (entity == null)
+        {
+            return NotFound();
+        }
+        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        return View(entity);
+    }
+    public async Task<IActionResult> Edit(int id, Product model, IFormFile imageFile)
+    {
+
+        if (id != model.ProductId)
+        {
+            return NotFound();
+        }
+        if (ModelState.IsValid)
+        {
+
+        }
+        return View();
+    }
 }
