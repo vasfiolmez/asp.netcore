@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\img\\6dedb9d5-02b3-491a-8d91-b2a2edfdb06f.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\Forms_Application\\wwwroot\\img\\74c73e26-dce0-42a5-ae86-c87b04bacf44.jpg",
+      "PackagePath": "staticwebassets\\img\\74c73e26-dce0-42a5-ae86-c87b04bacf44.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\Forms_Application\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

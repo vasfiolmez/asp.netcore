@@ -4,6 +4,7 @@ using Forms_Application.Models;
 using System.Globalization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Security.Principal;
 
 namespace Forms_Application.Controllers;
 
@@ -79,6 +80,7 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpGet]
     public IActionResult Edit(int? id)
     {
         if (id == null)
@@ -93,7 +95,8 @@ public class HomeController : Controller
         ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
         return View(entity);
     }
-    public async Task<IActionResult> Edit(int id, Product model, IFormFile imageFile)
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, Product model, IFormFile? imageFile)
     {
 
         if (id != model.ProductId)
@@ -102,8 +105,61 @@ public class HomeController : Controller
         }
         if (ModelState.IsValid)
         {
+            if (imageFile != null)
+            {
+                var extensions = Path.GetExtension(imageFile.FileName);
+                var randomFileName = string.Format($"{Guid.NewGuid().ToString()}{extensions}");
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomFileName);
 
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await imageFile!.CopyToAsync(stream);
+                }
+                model.Image = randomFileName;
+            }
+            Repository.EditProduct(model);
+            return RedirectToAction("Index");
         }
-        return View();
+        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        return View(model);
     }
+
+    public IActionResult Delete(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+        var entity = Repository.Products.FirstOrDefault(p => p.ProductId == id);
+        if (entity == null)
+        {
+            return NotFound();
+        }
+
+        return View("DeleteConfirm", entity);
+    }
+    [HttpPost]
+    public IActionResult Delete(int? id, int ProductId)
+    {
+        if (id != ProductId)
+        {
+            return NotFound();
+        }
+        var entity = Repository.Products.FirstOrDefault(p => p.ProductId == ProductId);
+        if (entity == null)
+        {
+            return NotFound();
+        }
+        Repository.DeleteProduct(entity);
+        return RedirectToAction("Index");
+    }
+    public IActionResult EditProducts(List<Product> products)
+    {
+        foreach (var prd in products)
+        {
+            Repository.EditIsActive(prd);
+        }
+        return RedirectToAction("Index");
+    }
+
 }

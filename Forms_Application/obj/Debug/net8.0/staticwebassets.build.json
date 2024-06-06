@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ux/HuUAMO+i+dZVOx/r066HwWVf4cSbHjQLvBuGjdxQ=",
+  "Hash": "awj9CJOt0bYndNa35nvGRCG9qz6bP0BXVyfOjSUGuaU=",
   "Source": "Forms_Application",
   "BasePath": "_content/Forms_Application",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\6dedb9d5-02b3-491a-8d91-b2a2edfdb06f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\asp.netcore\\Forms_Application\\wwwroot\\img\\74c73e26-dce0-42a5-ae86-c87b04bacf44.jpg",
+      "SourceId": "Forms_Application",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\asp.netcore\\Forms_Application\\wwwroot\\",
+      "BasePath": "_content/Forms_Application",
+      "RelativePath": "img/74c73e26-dce0-42a5-ae86-c87b04bacf44.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\74c73e26-dce0-42a5-ae86-c87b04bacf44.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\asp.netcore\\Forms_Application\\wwwroot\\js\\site.js",
