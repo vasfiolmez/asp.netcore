@@ -1,0 +1,26 @@
+@model IEnumerable<Student>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in model)
+            {
+            <tr>
+                <td>@item.StudentId</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>
+                    <a href="" class="btn btn-sm btn-primary">Details</a>
+                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
