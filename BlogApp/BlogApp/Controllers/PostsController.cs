@@ -4,21 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogApp.Data.Abstract;
 using BlogApp.Data.Concrete.EfCore;
+using BlogApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BlogApp.Controllers
 {
     public class PostsController : Controller
     {
-        private IPostRepository _repository;
+        private IPostRepository _postRepository;
         public PostsController(IPostRepository repository)
         {
-            _repository = repository;
+            _postRepository = repository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string tag)
         {
-            return View(_repository.Posts.ToList());
+            var posts = _postRepository.Posts;
+
+            if (!string.IsNullOrEmpty(tag))
+            {
+                posts = posts.Where(x => x.Tags.Any(t => t.Url == tag));
+            }
+            return View(
+                new PostsViewModel
+                {
+                    Posts = await posts.ToListAsync()
+                }
+            );
+        }
+        public async Task<IActionResult> Details(string url)
+        {
+            return View(await _postRepository
+            .Posts
+            .Include(x => x.Tags)
+            .FirstOrDefaultAsync(p => p.Url == url));
         }
     }
 }

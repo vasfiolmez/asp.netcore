@@ -23,11 +23,11 @@ namespace BlogApp.Data.Concrete.EfCore
                 if (!context.Tags.Any())
                 {
                     context.Tags.AddRange(
-                        new Entity.Tag { Text = "web programlama" },
-                        new Entity.Tag { Text = "backend" },
-                        new Entity.Tag { Text = "fullstack" },
-                        new Entity.Tag { Text = "frontend" },
-                        new Entity.Tag { Text = "php" }
+                        new Entity.Tag { Text = "web programlama", Url = "web-programlama", Colors = TagColors.danger },
+                        new Entity.Tag { Text = "backend", Url = "backend", Colors = TagColors.primary },
+                        new Entity.Tag { Text = "fullstack", Url = "fullstack", Colors = TagColors.secondary },
+                        new Entity.Tag { Text = "frontend", Url = "frontend", Colors = TagColors.success },
+                        new Entity.Tag { Text = "php", Url = "php", Colors = TagColors.warning }
                     );
                     context.SaveChanges();
                 }
@@ -48,9 +48,11 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Asp.Net core",
                             Content = "Asp.Net core dersleri",
+                            Url = "aspnet-core",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
-                            Tags = context.Tags.Take(3).ToList(),
+                            Image = "1.jpg",
+                            Tags = context.Tags.Take(5).ToList(),
                             UserId = 1
 
                         },
@@ -58,8 +60,10 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Php",
                             Content = "Php dersleri",
+                            Url = "php",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-5),
+                            PublishedOn = DateTime.Now.AddDays(-2),
+                            Image = "2.jpg",
                             Tags = context.Tags.Take(2).ToList(),
                             UserId = 1
 
@@ -68,8 +72,46 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Django",
                             Content = "Django dersleri",
+                            Url = "django",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-2),
+                            PublishedOn = DateTime.Now.AddDays(-4),
+                            Image = "3.jpg",
+                            Tags = context.Tags.Take(1).ToList(),
+                            UserId = 2
+
+                        },
+                        new Post
+                        {
+                            Title = "React",
+                            Content = "React dersleri",
+                            Url = "react",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-6),
+                            Image = "3.jpg",
+                            Tags = context.Tags.Take(1).ToList(),
+                            UserId = 2
+
+                        },
+                        new Post
+                        {
+                            Title = "Angular",
+                            Content = "Angular dersleri",
+                            Url = "angular",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-8),
+                            Image = "3.jpg",
+                            Tags = context.Tags.Take(1).ToList(),
+                            UserId = 2
+
+                        },
+                        new Post
+                        {
+                            Title = "Web Tasarım",
+                            Content = "Web Tasarım dersleri",
+                            Url = "web-tasarim",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-10),
+                            Image = "3.jpg",
                             Tags = context.Tags.Take(1).ToList(),
                             UserId = 2
 
