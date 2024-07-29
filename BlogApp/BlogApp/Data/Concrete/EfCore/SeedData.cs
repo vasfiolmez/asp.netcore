@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BlogApp.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +7,7 @@ namespace BlogApp.Data.Concrete.EfCore
     {
         public static void TestVerileriDoldur(IApplicationBuilder app)
         {
-            var context = app.ApplicationServices.CreateAsyncScope().ServiceProvider.GetService<BlogContext>();
+            var context = app.ApplicationServices.CreateScope().ServiceProvider.GetService<BlogContext>();
 
             if (context != null)
             {
@@ -23,11 +19,11 @@ namespace BlogApp.Data.Concrete.EfCore
                 if (!context.Tags.Any())
                 {
                     context.Tags.AddRange(
-                        new Entity.Tag { Text = "web programlama", Url = "web-programlama", Colors = TagColors.danger },
-                        new Entity.Tag { Text = "backend", Url = "backend", Colors = TagColors.primary },
-                        new Entity.Tag { Text = "fullstack", Url = "fullstack", Colors = TagColors.secondary },
-                        new Entity.Tag { Text = "frontend", Url = "frontend", Colors = TagColors.success },
-                        new Entity.Tag { Text = "php", Url = "php", Colors = TagColors.warning }
+                        new Tag { Text = "web programlama", Url = "web-programlama", Colors = TagColors.warning },
+                        new Tag { Text = "backend", Url = "backend", Colors = TagColors.info },
+                        new Tag { Text = "frontend", Url = "frontend", Colors = TagColors.success },
+                        new Tag { Text = "fullstack", Url = "fullstack", Colors = TagColors.secondary },
+                        new Tag { Text = "php", Url = "php", Colors = TagColors.primary }
                     );
                     context.SaveChanges();
                 }
@@ -35,8 +31,8 @@ namespace BlogApp.Data.Concrete.EfCore
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new Entity.User { UserName = "vasfiolmez" },
-                        new Entity.User { UserName = "ahmetyilmaz" }
+                        new User { UserName = "sadikturan", Image = "p1.jpg" },
+                        new User { UserName = "ahmetyilmaz", Image = "p2.jpg" }
                     );
                     context.SaveChanges();
                 }
@@ -46,27 +42,29 @@ namespace BlogApp.Data.Concrete.EfCore
                     context.Posts.AddRange(
                         new Post
                         {
-                            Title = "Asp.Net core",
-                            Content = "Asp.Net core dersleri",
+                            Title = "Asp.net core",
+                            Content = "Asp.net core dersleri",
                             Url = "aspnet-core",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
+                            Tags = context.Tags.Take(3).ToList(),
                             Image = "1.jpg",
-                            Tags = context.Tags.Take(5).ToList(),
-                            UserId = 1
-
+                            UserId = 1,
+                            Comments = new List<Comment> {
+                                new Comment { Text = "iyi bir kurs", PublishedOn = DateTime.Now.AddDays(-30), UserId = 1},
+                                new Comment { Text = "çok faydalandığım bir kurs", PublishedOn = DateTime.Now.AddDays(-30), UserId = 2},
+                            }
                         },
                         new Post
                         {
                             Title = "Php",
-                            Content = "Php dersleri",
+                            Content = "Php core dersleri",
                             Url = "php",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-2),
                             Image = "2.jpg",
+                            PublishedOn = DateTime.Now.AddDays(-20),
                             Tags = context.Tags.Take(2).ToList(),
                             UserId = 1
-
                         },
                         new Post
                         {
@@ -74,57 +72,51 @@ namespace BlogApp.Data.Concrete.EfCore
                             Content = "Django dersleri",
                             Url = "django",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-4),
                             Image = "3.jpg",
-                            Tags = context.Tags.Take(1).ToList(),
+                            PublishedOn = DateTime.Now.AddDays(-30),
+                            Tags = context.Tags.Take(4).ToList(),
                             UserId = 2
-
-                        },
+                        }
+                        ,
                         new Post
                         {
-                            Title = "React",
+                            Title = "React Dersleri",
                             Content = "React dersleri",
-                            Url = "react",
+                            Url = "react-dersleri",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-6),
                             Image = "3.jpg",
-                            Tags = context.Tags.Take(1).ToList(),
+                            PublishedOn = DateTime.Now.AddDays(-40),
+                            Tags = context.Tags.Take(4).ToList(),
                             UserId = 2
-
-                        },
+                        }
+                        ,
                         new Post
                         {
                             Title = "Angular",
                             Content = "Angular dersleri",
                             Url = "angular",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-8),
                             Image = "3.jpg",
-                            Tags = context.Tags.Take(1).ToList(),
+                            PublishedOn = DateTime.Now.AddDays(-50),
+                            Tags = context.Tags.Take(4).ToList(),
                             UserId = 2
-
-                        },
+                        }
+                        ,
                         new Post
                         {
                             Title = "Web Tasarım",
-                            Content = "Web Tasarım dersleri",
+                            Content = "Web tasarım dersleri",
                             Url = "web-tasarim",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-10),
                             Image = "3.jpg",
-                            Tags = context.Tags.Take(1).ToList(),
+                            PublishedOn = DateTime.Now.AddDays(-60),
+                            Tags = context.Tags.Take(4).ToList(),
                             UserId = 2
-
                         }
-
                     );
                     context.SaveChanges();
                 }
-
-
             }
-
-
         }
     }
 }
