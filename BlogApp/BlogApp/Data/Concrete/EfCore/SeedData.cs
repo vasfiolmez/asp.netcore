@@ -31,8 +31,8 @@ namespace BlogApp.Data.Concrete.EfCore
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new User { UserName = "sadikturan", Image = "p1.jpg" },
-                        new User { UserName = "ahmetyilmaz", Image = "p2.jpg" }
+                        new User { UserName = "sadikturan", Image = "p1.jpg", Name = "Sadık Turan", Email = "sadikturan@gmail.com", Password = "123456" },
+                        new User { UserName = "vasfiolmez", Image = "p2.jpg", Name = "Vasfi Ölmez", Email = "info@vasfiolmez.com", Password = "123456" }
                     );
                     context.SaveChanges();
                 }
@@ -44,6 +44,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Asp.net core",
                             Content = "Asp.net core dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "aspnet-core",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
@@ -59,6 +60,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Php",
                             Content = "Php core dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "php",
                             IsActive = true,
                             Image = "2.jpg",
@@ -70,6 +72,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Django",
                             Content = "Django dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "django",
                             IsActive = true,
                             Image = "3.jpg",
@@ -82,6 +85,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "React Dersleri",
                             Content = "React dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "react-dersleri",
                             IsActive = true,
                             Image = "3.jpg",
@@ -94,6 +98,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Angular",
                             Content = "Angular dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "angular",
                             IsActive = true,
                             Image = "3.jpg",
@@ -106,6 +111,7 @@ namespace BlogApp.Data.Concrete.EfCore
                         {
                             Title = "Web Tasarım",
                             Content = "Web tasarım dersleri",
+                            Description = "Asp.net core dersleri",
                             Url = "web-tasarim",
                             IsActive = true,
                             Image = "3.jpg",

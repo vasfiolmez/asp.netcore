@@ -6,10 +6,9 @@ using BlogApp.Entity;
 
 namespace BlogApp.Data.Abstract
 {
-    public interface IPostRepository
+    public interface IUserRepository
     {
-        IQueryable<Post> Posts { get; }
-        void CreatePost(Post post);
-        void EditPost(Post post, int[] tagIds);
+        IQueryable<User> Users { get; }
+        void CreateUser(User user);
     }
 }
