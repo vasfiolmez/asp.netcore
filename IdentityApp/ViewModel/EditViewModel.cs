@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace IdentityApp.ViewModel
 {
-    public class CreateViewModel
+    public class EditViewModel
     {
 
-        [Required]
-        public string FullName { get; set; } = string.Empty;
-        [Required]
+        public string? Id { get; set; }
+        public string? FullName { get; set; }
+
         [EmailAddress]
-        public string Email { get; set; } = string.Empty;
-        [Required]
+        public string? Email { get; set; }
+
         [DataType(DataType.Password)]
-        public string Password { get; set; } = string.Empty;
-        [Required]
+        public string? Password { get; set; }
+
         [DataType(DataType.Password)]
         [Compare(nameof(Password), ErrorMessage = "Parola Eşleşmiyor.")]
-        public string ConfirmPassword { get; set; } = string.Empty;
+        public string? ConfirmPassword { get; set; }
     }
 }
