@@ -5,12 +5,19 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
+ new SmtpEmailSender(
+    builder.Configuration["EmailSender:Host"],
+    builder.Configuration.GetValue<int>("EmailSender:Port"),
+    builder.Configuration.GetValue<bool>("EmailSender:EnableSSL"),
+    builder.Configuration["EmailSender:Username"],
+    builder.Configuration["EmailSender:Password"]
+));
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<IdentityContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:SqlServer_Connection"]));
 
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<IdentityContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -23,9 +30,21 @@ builder.Services.Configure<IdentityOptions>(options =>
 
     options.User.RequireUniqueEmail = true;
     // options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+
+    options.SignIn.RequireConfirmedEmail = true;
 });
 
-
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login/";
+    options.LogoutPath = "";
+    options.AccessDeniedPath = "/Account/AccessDenied/";
+    options.SlidingExpiration = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+});
 
 var app = builder.Build();
 
@@ -42,6 +61,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
