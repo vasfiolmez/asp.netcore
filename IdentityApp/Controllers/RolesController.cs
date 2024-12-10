@@ -4,13 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using IdentityApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace IdentityApp.Controllers
 {
-
+    [Authorize(Roles = "admin")]
     public class RolesController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
@@ -21,6 +22,7 @@ namespace IdentityApp.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
         public IActionResult Index()
         {
             return View(_roleManager.Roles);
