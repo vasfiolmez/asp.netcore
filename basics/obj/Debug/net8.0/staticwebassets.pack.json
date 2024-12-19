@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\basics.bundle.scp.css",
-      "PackagePath": "staticwebassets\\basics.bundle.scp.css"
+      "PackagePath": "staticwebassets\\basics.gq9nfc9pnt.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\css\\contact.css",
@@ -263,6 +263,10 @@
     {
       "Id": "C:\\Users\\hp\\Desktop\\asp.netcore\\basics\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.basics.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.basics.Microsoft.AspNetCore.StaticWebAssets.props",

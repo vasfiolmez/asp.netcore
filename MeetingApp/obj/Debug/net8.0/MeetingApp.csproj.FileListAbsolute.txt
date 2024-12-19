@@ -28,3 +28,6 @@ C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAsse
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAssemblyInfo.cs
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\bin\Debug\net8.0\libman.json
 C:\Users\hp\Desktop\asp.netcore\MeetingApp\bin\Debug\net8.0\MeetingApp.staticwebassets.runtime.json
+C:\Users\hp\Desktop\asp.netcore\MeetingApp\bin\Debug\net8.0\MeetingApp.staticwebassets.endpoints.json
+C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\hp\Desktop\asp.netcore\MeetingApp\obj\Debug\net8.0\staticwebassets\msbuild.MeetingApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

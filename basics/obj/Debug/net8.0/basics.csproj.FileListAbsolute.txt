@@ -29,3 +29,6 @@ C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\basics.pdb
 C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\basics.genruntimeconfig.cache
 C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\ref\basics.dll
 C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\basics.sourcelink.json
+C:\Users\hp\Desktop\asp.netcore\basics\bin\Debug\net8.0\basics.staticwebassets.endpoints.json
+C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\hp\Desktop\asp.netcore\basics\obj\Debug\net8.0\staticwebassets\msbuild.basics.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
